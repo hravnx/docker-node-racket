@@ -11,4 +11,6 @@ RUN chmod +x ./racket-install.sh
 
 RUN ["./racket-install.sh", "--in-place", "--create-links", "/usr/local"]
 
+RUN ["raco",  "pkg", "install", "--auto", "--scope", "installation", "rackunit-lib", "compiler-lib"]
+
 ENTRYPOINT ["racket", "--version"]
